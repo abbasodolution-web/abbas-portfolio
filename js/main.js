@@ -56,53 +56,52 @@
   $$('.reveal').forEach(el => revObs.observe(el));
 
   // Hero slider
-  const slides = $$('.slide'), dotsBox = $('#dots'), sp = $('#sp');
+  const slides = $$('.slide'), dotsBox = $('#dots'), sp = $('#sp'), hero = $('#home');
   const DELAY = 6500;
-  let cur = 0, timer = null, paused = false, start = 0, left = DELAY;
+  let cur = 0, elapsed = 0, last = performance.now(), hovered = false, focused = false;
   slides.forEach((_, i) => {
     const b = document.createElement('button');
     b.setAttribute('role', 'tab'); b.setAttribute('aria-label', 'Slide ' + (i + 1));
-    b.addEventListener('click', () => go(i, true)); dotsBox.appendChild(b);
+    b.addEventListener('click', () => go(i)); dotsBox.appendChild(b);
   });
   const dots = $$('button', dotsBox);
-  function go(i, user) {
+  function go(i) {
     cur = (i + slides.length) % slides.length;
-    slides.forEach((s, k) => { s.classList.toggle('active', k === cur); s.setAttribute('aria-hidden', k !== cur); });
+    slides.forEach((s, k) => { s.classList.toggle('active', k === cur); s.inert = k !== cur; });
     dots.forEach((d, k) => { d.classList.toggle('on', k === cur); d.setAttribute('aria-selected', k === cur); });
-    left = DELAY; start = performance.now();
-    if (user) paused = false;
+    elapsed = 0; sp.style.width = '0%';
   }
+  // The timer only runs while the pointer and keyboard focus are away from the slider and the tab is visible
   function loop(t) {
-    if (!paused && !reduced) {
-      const p = Math.min(1, (t - start) / left);
-      sp.style.width = p * 100 + '%';
-      if (p >= 1) go(cur + 1);
+    const dt = t - last; last = t;
+    if (!hovered && !focused && !document.hidden && !reduced) {
+      elapsed += dt;
+      sp.style.width = Math.min(100, elapsed / DELAY * 100) + '%';
+      if (elapsed >= DELAY) go(cur + 1);
     }
     requestAnimationFrame(loop);
   }
-  go(0); start = performance.now(); requestAnimationFrame(loop);
-  $('#prev').addEventListener('click', () => go(cur - 1, true));
-  $('#next').addEventListener('click', () => go(cur + 1, true));
-  const hero = $('#home');
-  const pause = () => { if (!paused) { paused = true; left = Math.max(300, left - (performance.now() - start)); } };
-  const resume = () => { if (paused) { paused = false; start = performance.now(); } };
-  hero.addEventListener('mouseenter', pause); hero.addEventListener('mouseleave', resume);
-  hero.addEventListener('focusin', pause); hero.addEventListener('focusout', resume);
+  go(0); requestAnimationFrame(loop);
+  $('#prev').addEventListener('click', () => go(cur - 1));
+  $('#next').addEventListener('click', () => go(cur + 1));
+  hero.addEventListener('mouseenter', () => hovered = true);
+  hero.addEventListener('mouseleave', () => hovered = false);
+  hero.addEventListener('focusin', e => { focused = e.target.matches(':focus-visible'); });
+  hero.addEventListener('focusout', () => focused = false);
   addEventListener('keydown', e => {
     if (e.target.closest('input,textarea,select')) return;
     const r = hero.getBoundingClientRect();
     if (r.bottom < 100 || r.top > innerHeight - 100) return;
-    if (e.key === 'ArrowLeft') go(cur - 1, true);
-    if (e.key === 'ArrowRight') go(cur + 1, true);
+    if (e.key === 'ArrowLeft') go(cur - 1);
+    if (e.key === 'ArrowRight') go(cur + 1);
   });
   let sx = null;
   hero.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
   hero.addEventListener('touchend', e => {
     if (sx === null) return;
     const dx = e.changedTouches[0].clientX - sx; sx = null;
-    if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1), true);
+    if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1));
   });
-  document.addEventListener('visibilitychange', () => document.hidden ? pause() : resume());
 
   // Typing effect
   const phrases = ['Odoo Technical & Functional Developer', 'Python · XML · OWL · PostgreSQL', 'Custom modules, reports, integrations', 'Apps published on the Odoo Apps Store'];
@@ -131,7 +130,7 @@
   // Windows: focus, drag, minimise, close, tabs, screenshot carousels
   const desk = $('#desk'), wins = $$('.window'), tabs = $$('.tabs [data-win]');
   let z = 10;
-  const focusWin = w => { w.classList.remove('hidden', 'min'); w.style.zIndex = ++z; wins.forEach(o => o.classList.toggle('top', o === w)); tabs.forEach(t => t.classList.toggle('on', t.dataset.win === w.id)); };
+  const focusWin = w => { w.classList.remove('hidden', 'min'); w.style.zIndex = ++z; wins.forEach(o => o.classList.toggle('top', o === w)); tabs.forEach(t => { const on = t.dataset.win === w.id; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); }); };
   const isDesktop = () => matchMedia('(min-width:981px)').matches;
   wins.forEach(w => {
     w.addEventListener('pointerdown', () => focusWin(w));

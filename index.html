@@ -10,6 +10,12 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://abbasodolution-web.github.io/abbas-portfolio/assets/og.png">
 <meta name="theme-color" content="#0f172a">
+<link rel="canonical" href="https://abbasodolution-web.github.io/abbas-portfolio/">
+<meta name="author" content="S M Abbas S">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ABBAS · Odoo Technical &amp; Functional Developer">
+<meta name="twitter:image" content="https://abbasodolution-web.github.io/abbas-portfolio/assets/og.png">
+<meta property="og:url" content="https://abbasodolution-web.github.io/abbas-portfolio/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,8 +207,11 @@
 <section class="sec" id="apps">
   <div class="wrap">
     <div class="head reveal"><span class="eyebrow">My Odoo apps</span><h2>Open an app, <span class="grad-t">explore</span> it</h2><p>Each app has its own window. Drag the title bars, click to bring one forward, minimise or close them.</p></div>
-    <div class="tabs reveal" role="tablist" aria-label="Apps">
-      <button role="tab" class="on" data-win="w1">Stale Watchdog</button><button role="tab" data-win="w2">User Access Helper</button><button role="tab" data-win="w3">Bulk Import / Export</button><button class="reset" id="reset" aria-label="Reset windows">↺ Reset</button>
+    <div class="tabs reveal">
+      <div class="tablist" role="tablist" aria-label="Apps">
+        <button role="tab" id="t-w1" aria-controls="w1" aria-selected="true" class="on" data-win="w1">Stale Watchdog</button><button role="tab" id="t-w2" aria-controls="w2" aria-selected="false" data-win="w2">User Access Helper</button><button role="tab" id="t-w3" aria-controls="w3" aria-selected="false" data-win="w3">Bulk Import / Export</button>
+      </div>
+      <button class="reset" id="reset" aria-label="Reset the app windows">↺ Reset</button>
     </div>
     <div class="desk reveal" id="desk">
 
@@ -213,7 +222,7 @@
             <img src="assets/img/wd-pipeline.webp" alt="Pipeline with stale badges" class="on" loading="lazy" width="1280" height="800"><img src="assets/img/wd-form.webp" alt="Deal form with quick pause" loading="lazy" width="1280" height="800"><img src="assets/img/wd-pause.webp" alt="Pause until the customer replies" loading="lazy" width="1280" height="800"><img src="assets/img/wd-report.webp" alt="Revenue at risk report" loading="lazy" width="1280" height="800"><img src="assets/img/wd-digest.webp" alt="Weekly digest email" loading="lazy" width="1280" height="720"><img src="assets/img/wd-bulk.webp" alt="Bulk follow-up" loading="lazy" width="1280" height="800"><img src="assets/img/wd-history.webp" alt="Stale history" loading="lazy" width="1280" height="800">
             <button class="c-prev" aria-label="Previous screenshot">‹</button><button class="c-next" aria-label="Next screenshot">›</button>
           </div>
-          <div class="info"><span class="chip func">CRM</span><h4>Find deals that went quiet</h4>
+          <div class="info"><span class="chip func">CRM</span><h3>Find deals that went quiet</h3>
             <ul><li>Stale risk score from 0 to 100</li><li>Shorter limits for big deals</li><li>Pause until the customer replies</li><li>Monday digest and bulk follow-up</li><li>History of who recovered each deal</li></ul>
             <a class="btn primary sm" href="https://apps.odoo.com/apps/modules/19.0/crm_stale_watchdog" target="_blank" rel="noopener">Odoo Apps Store ↗</a></div>
         </div>
@@ -226,7 +235,7 @@
             <img src="assets/img/uah-overview.webp" alt="Security overview" class="on" loading="lazy" width="1280" height="800"><img src="assets/img/uah-access.webp" alt="Temporary access" loading="lazy" width="1280" height="800"><img src="assets/img/uah-review.webp" alt="Access review" loading="lazy" width="1280" height="800"><img src="assets/img/uah-rights.webp" alt="Rights explorer" loading="lazy" width="1280" height="800">
             <button class="c-prev" aria-label="Previous screenshot">‹</button><button class="c-next" aria-label="Next screenshot">›</button>
           </div>
-          <div class="info"><span class="chip tech">Security</span><h4>Know who can do what</h4>
+          <div class="info"><span class="chip tech">Security</span><h3>Know who can do what</h3>
             <ul><li>2FA required by group, with a grace period</li><li>Temporary access that removes itself</li><li>Access reviews with a printable report</li><li>Rights explorer: compare and copy</li><li>Security overview 2.8 s to 0.5 s on 5,000 users</li></ul>
             <a class="btn primary sm" href="https://apps.odoo.com/apps/modules/19.0/user_access_helper" target="_blank" rel="noopener">Odoo Apps Store ↗</a></div>
         </div>
@@ -239,7 +248,7 @@
             <img src="assets/img/bd-preview.webp" alt="Import preview" class="on" loading="lazy" width="1280" height="760"><img src="assets/img/bd-result.webp" alt="Import result" loading="lazy" width="1280" height="800"><img src="assets/img/bd-log.webp" alt="Import log" loading="lazy" width="1280" height="800"><img src="assets/img/bd-schedule.webp" alt="Scheduled exports" loading="lazy" width="1280" height="800">
             <button class="c-prev" aria-label="Previous screenshot">‹</button><button class="c-next" aria-label="Next screenshot">›</button>
           </div>
-          <div class="info"><span class="chip func">Data</span><h4>Import big, messy files safely</h4>
+          <div class="info"><span class="chip func">Data</span><h3>Import big, messy files safely</h3>
             <ul><li>Preview before anything is saved</li><li>One-click undo of an import</li><li>Saved mappings and order lines from a second sheet</li><li>Import log and scheduled exports</li><li>Bad rows come back as an Excel file</li></ul>
             <a class="btn primary sm" href="https://apps.odoo.com/apps/modules/19.0/bulk_data_import_export" target="_blank" rel="noopener">Odoo Apps Store ↗</a></div>
         </div>
@@ -277,11 +286,11 @@
   <div class="wrap">
     <div class="head reveal"><span class="eyebrow">Process</span><h2>From idea to <span class="grad-f">go-live</span> in five steps</h2></div>
     <ol class="timeline">
-      <li class="reveal"><span>1</span><h4>Discover</h4><p>We talk through the process and the pain. I ask the questions that save you rework later.</p></li>
-      <li class="reveal"><span>2</span><h4>Design</h4><p>A short written plan: screens, data, rules, price and dates. You approve before I code.</p></li>
-      <li class="reveal"><span>3</span><h4>Build</h4><p>Small, reviewable steps on a staging copy, so you can see progress every few days.</p></li>
-      <li class="reveal"><span>4</span><h4>Test</h4><p>Automated tests plus a walk-through with your users. Edge cases are checked, not hoped for.</p></li>
-      <li class="reveal"><span>5</span><h4>Support</h4><p>Go-live help, a handover note and a fix window for anything we missed.</p></li>
+      <li class="reveal"><span>1</span><h3>Discover</h3><p>We talk through the process and the pain. I ask the questions that save you rework later.</p></li>
+      <li class="reveal"><span>2</span><h3>Design</h3><p>A short written plan: screens, data, rules, price and dates. You approve before I code.</p></li>
+      <li class="reveal"><span>3</span><h3>Build</h3><p>Small, reviewable steps on a staging copy, so you can see progress every few days.</p></li>
+      <li class="reveal"><span>4</span><h3>Test</h3><p>Automated tests plus a walk-through with your users. Edge cases are checked, not hoped for.</p></li>
+      <li class="reveal"><span>5</span><h3>Support</h3><p>Go-live help, a handover note and a fix window for anything we missed.</p></li>
     </ol>
   </div>
 </section>
@@ -315,7 +324,7 @@
 </main>
 
 <footer class="foot"><div class="wrap"><span>© <span id="yr"></span> S M Abbas S · Odoo Technical &amp; Functional Developer · Karachi, Pakistan</span><a href="#home">Back to top ↑</a></div></footer>
-<a class="wa-float" href="https://wa.me/923182335569?text=Hello%20Abbas%2C%20I%20found%20your%20website%20and%20I%20need%20help%20with%20Odoo." target="_blank" rel="noopener" aria-label="Chat with me on WhatsApp"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.800 1.500 7 0 12.600-5.600 12.600-12.500C28.800 8.600 23 3 16 3zm0 22.800c-1.900 0-3.700-.5-5.200-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4c-1-1.600-1.500-3.400-1.500-5.200C5.400 9.800 10.200 5.200 16 5.200s10.600 4.600 10.600 10.300S21.800 25.800 16 25.800zm5.800-7.500c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.200-.2-.3 0-.5.100-.7l.5-.6c.1-.2.200-.3.300-.5.100-.2.100-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.2.200 2.100 3.300 5.200 4.500 3.100 1.200 3.100.8 3.600.8.600-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a>
+<aside aria-label="Contact shortcut"><a class="wa-float" href="https://wa.me/923182335569?text=Hello%20Abbas%2C%20I%20found%20your%20website%20and%20I%20need%20help%20with%20Odoo." target="_blank" rel="noopener" aria-label="Chat with me on WhatsApp"><svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.800 1.500 7 0 12.600-5.600 12.600-12.500C28.800 8.600 23 3 16 3zm0 22.800c-1.900 0-3.700-.5-5.200-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4c-1-1.600-1.500-3.400-1.500-5.200C5.400 9.800 10.200 5.200 16 5.200s10.600 4.600 10.600 10.300S21.800 25.800 16 25.800zm5.800-7.500c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.200-.2-.3 0-.5.100-.7l.5-.6c.1-.2.200-.3.300-.5.100-.2.100-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.2.200 2.100 3.300 5.200 4.500 3.100 1.200 3.100.8 3.600.8.600-.1 1.900-.8 2.200-1.500.3-.7.300-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a></aside>
 <script src="js/main.js"></script>
 </body>
 </html>
