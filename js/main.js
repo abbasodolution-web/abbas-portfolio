@@ -195,7 +195,7 @@
     if (!ok) { note.textContent = ''; return; }
     const d = new FormData(form);
     const body = `${d.get('message')}\n\nName: ${d.get('name')}\nEmail: ${d.get('email')}\nBudget: ${d.get('budget')}`;
-    location.href = 'mailto:abbasodolution@gmail.com?subject=' + encodeURIComponent('Odoo project enquiry from ' + d.get('name')) + '&body=' + encodeURIComponent(body);
-    note.textContent = 'Opening your email app. If nothing opens, write to abbasodolution@gmail.com directly.';
+    location.href = 'mailto:abbas031911@gmail.com?subject=' + encodeURIComponent('Odoo project enquiry from ' + d.get('name')) + '&body=' + encodeURIComponent(body);
+    note.textContent = 'Opening your email app. If nothing opens, write to abbas031911@gmail.com directly.';
   });
 })();
