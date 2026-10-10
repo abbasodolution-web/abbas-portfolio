@@ -13,7 +13,7 @@ Drag the folder onto Netlify Drop, or push it to a GitHub repo and enable GitHub
 - Colors: CSS variables at the top of `css/style.css` (functional = amber/coral/teal, technical = indigo/blue/navy).
 - Slides: each `<article class="slide sN">` in the hero. Backgrounds are the `.s1` to `.s5` gradients in the CSS.
 - App windows: the three `<section class="window">` blocks. Add screenshots as extra `<img>` tags in `data-carousel`.
-- Photo: in the About section replace `<span>AS</span>` inside `.avatar` with `<img src="assets/img/me.webp" alt="S M Abbas S">`.
+- Photo: in the About section replace `<span>AS</span>` inside `.avatar` with `<img src="assets/img/portrait-v3.webp" alt="S M Abbas S">`.
 - Testimonials: three placeholder cards in "What clients say". Replace them with real quotes before going live.
 - Contact form: validates, then opens the visitor's email app (mailto). For a real form backend, point the form to Formspree or Netlify Forms.
 - Share image: `assets/og.png` (1200x630).
