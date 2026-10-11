@@ -1,25 +1,33 @@
-# ABBAS portfolio site
+# Abbas portfolio
 
-Static site (HTML, CSS, vanilla JS). No build step.
+Personal portfolio for S M Abbas S, Odoo Technical & Functional Developer.
+Static HTML, CSS and JavaScript; no build or dependencies required.
 
-## Run locally
-    python3 -m http.server 8000     # then open http://localhost:8000
+## Preview
 
-## Deploy
-Drag the folder onto Netlify Drop, or push it to a GitHub repo and enable GitHub Pages.
+Run `python3 -m http.server 8770` in this directory, then open http://localhost:8770.
 
 ## Edit
-- Text: `index.html`. Sections are marked with comments (HERO SLIDER, ABOUT, SERVICES, APPS, PROOF, PROCESS, CONTACT).
-- Colors: CSS variables at the top of `css/style.css` (functional = amber/coral/teal, technical = indigo/blue/navy).
-- Slides: each `<article class="slide sN">` in the hero. Backgrounds are the `.s1` to `.s5` gradients in the CSS.
-- App windows: the three `<section class="window">` blocks. Add screenshots as extra `<img>` tags in `data-carousel`.
-- Photo: in the About section replace `<span>AS</span>` inside `.avatar` with `<img src="assets/img/portrait-v4.webp" alt="S M Abbas S">`.
-- Testimonials: three placeholder cards in "What clients say". Replace them with real quotes before going live.
-- Contact form: validates, then opens the visitor's email app (mailto). For a real form backend, point the form to Formspree or Netlify Forms.
-- Share image: `assets/og.png` (1200x630).
 
-## Features
-Hero slider (5 slides, autoplay with progress bar, pause on hover, swipe, arrows, dots, keyboard), three promo banners,
-draggable app windows with screenshot carousels, animated counters and bars, testimonials slider, 5-step timeline,
-light/dark theme (follows the system, remembers the choice), scroll reveals, typing effect, magnetic buttons,
-reduced-motion support, responsive from 360 px.
+- Content, metadata and structured data: `index.html`.
+- Colors, typography and responsive layout: `css/style.css`.
+- Theme, mobile menu, screenshot galleries and email enquiry: `js/main.js`.
+- Existing portrait: `assets/img/portrait-v4.webp` and its small variant.
+- App screenshots: `assets/img/`.
+- Social sharing preview: `assets/og-v4.png`.
+
+The contact form prepares an email draft in the visitor's email application.
+It does not submit to a server. App metrics and professional details are retained
+from the previous portfolio. No placeholder testimonials are displayed.
+
+## Publish
+
+GitHub Pages serves this repository from `main`. Push reviewed changes to publish.
+Increment CSS and JS query versions in `index.html` for new releases.
+
+## Accessibility
+
+Semantic landmarks, a single primary heading, labeled form fields, native validation,
+visible focus rings, skip navigation, keyboard-accessible gallery controls,
+Escape-to-close mobile navigation, reduced-motion support and dark/light themes.
+Essential content stays visible when JavaScript is unavailable.
