@@ -16,7 +16,7 @@ Run `python3 -m http.server 8770` in this directory, then open http://localhost:
 - Final readability, theme polish and reading progress: `css/polish.css` and `js/polish.js`.
 - Existing portrait: `assets/img/portrait-v4.webp` and its small variant.
 - App screenshots: `assets/img/`.
-- Social sharing preview: `assets/og-v5.png`.
+- Social sharing preview: `assets/og-v7.png`.
 
 The contact form prepares an email draft in the visitor's email application.
 It does not submit to a server. App metrics and professional details are retained
