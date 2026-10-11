@@ -13,6 +13,7 @@ Run `python3 -m http.server 8770` in this directory, then open http://localhost:
 - Colors, typography and responsive layout: `css/style.css`.
 - Theme, mobile menu, screenshot galleries and email enquiry: `js/main.js`.
 - Continuous animations, scroll entrances and pause control: `css/motion.css` and `js/motion.js`.
+- Final readability, theme polish and reading progress: `css/polish.css` and `js/polish.js`.
 - Existing portrait: `assets/img/portrait-v4.webp` and its small variant.
 - App screenshots: `assets/img/`.
 - Social sharing preview: `assets/og-v5.png`.
