@@ -1,0 +1,34 @@
+/* Motion is progressive: all content remains visible without JavaScript. */
+.hero{position:relative}
+.hero h1 em{background:linear-gradient(100deg,var(--accent) 20%,#f7e5bd 45%,var(--accent) 70%);background-size:250% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:gold-flow 7s ease-in-out infinite}
+[data-theme=light] .hero h1 em{background-image:linear-gradient(100deg,#79571d 20%,#ad7928 45%,#79571d 70%)}
+.portrait{animation:portrait-float 7s ease-in-out infinite;box-shadow:0 18px 60px #0002}
+.availability>span{animation:status-pulse 2.8s ease-in-out infinite}
+.hero-bottom a span{display:inline-block;animation:scroll-nudge 2s ease-in-out infinite}
+.hero-copy>*{animation:welcome-in .85s both cubic-bezier(.2,.7,.2,1)}
+.hero-copy>:nth-child(2){animation-delay:.1s}.hero-copy>:nth-child(3){animation-delay:.2s}.hero-copy>:nth-child(4){animation-delay:.3s}.hero-copy>:nth-child(5){animation-delay:.4s}.hero-copy>:nth-child(6){animation-delay:.5s}
+.motion-strip{display:flex;align-items:center;border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg)}
+.motion-viewport{overflow:hidden;flex:1;min-width:0;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.motion-track{display:flex;width:max-content;animation:skills-travel 35s linear infinite}
+.motion-group{display:flex;align-items:center;gap:42px;padding:20px 21px;flex-shrink:0;font-family:Manrope,sans-serif;font-size:12px;letter-spacing:2px;color:var(--muted)}
+.motion-group>span{white-space:nowrap}.motion-group>span:after{content:'✦';display:inline-block;margin-left:42px;color:var(--accent);font-size:10px}
+.motion-toggle{flex-shrink:0;align-self:stretch;background:var(--panel);border:0;border-left:1px solid var(--line);font-size:10px;padding:0 20px;min-width:122px;letter-spacing:.4px}
+.motion-toggle:hover{color:var(--accent)}.motion-toggle:disabled{cursor:default;color:var(--muted)}
+.motion-strip:hover .motion-track,.motion-strip:focus-within .motion-track{animation-play-state:paused}
+.motion-enter{animation:section-arrive .75s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--arrival-delay,0ms)}
+.screens img:not([hidden]){animation:screen-arrive .4s ease-out}
+.project-visual,.services>article,.skills>span{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+@media(hover:hover){.project-visual:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 18px 35px #0002}.skills>span:hover{transform:translateY(-3px);border-color:var(--accent)}}
+.motion-paused *,.motion-paused *:before,.motion-paused *:after,.tab-hidden *,.tab-hidden *:before,.tab-hidden *:after{animation-play-state:paused!important}
+.motion-paused .hero-copy>*{animation:none;opacity:1;transform:none}
+.hero-away .portrait,.hero-away .hero h1 em,.hero-away .availability>span,.hero-away .hero-bottom a span,.motion-strip.offscreen .motion-track{animation-play-state:paused}
+@keyframes gold-flow{0%,100%{background-position:100% 50%}50%{background-position:0% 50%}}
+@keyframes portrait-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes status-pulse{0%,100%{box-shadow:0 0 0 3px #a7c6a218}50%{box-shadow:0 0 0 8px #a7c6a200}}
+@keyframes scroll-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@keyframes skills-travel{to{transform:translateX(-50%)}}
+@keyframes welcome-in{from{transform:translateY(18px)}to{transform:none}}
+@keyframes section-arrive{from{transform:translateY(24px)}to{transform:none}}
+@keyframes screen-arrive{from{opacity:.5}to{opacity:1}}
+@media(max-width:760px){.motion-group{gap:26px;padding:16px 13px;font-size:10px}.motion-group>span:after{margin-left:26px}.motion-toggle{min-width:102px;padding-inline:12px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.hero h1 em{background:none;color:var(--accent)}.motion-track{animation:none}.portrait{transform:none}.motion-enter,.hero-copy>*{opacity:1;transform:none}}
