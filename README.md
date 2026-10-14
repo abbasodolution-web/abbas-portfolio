@@ -12,9 +12,9 @@ Run `python3 -m http.server 8770` in this directory, then open http://localhost:
 - Content, metadata and structured data: `index.html`.
 - Design (graphite / silver / dark-gold tokens, both themes, responsive layout): `css/site.css`.
 - Theme toggle, mobile menu, galleries, scroll reveal and email enquiry: `js/site.js`.
-- Latest-release video: `assets/video/` (720p H.264, faststart) with poster `assets/img/bd3-poster.webp`.
+- Latest-release video: `assets/video/` (720p H.264, faststart) with poster `assets/img/uah4-poster.webp`.
 - App screenshots: `assets/img/`. Portrait: `assets/img/portrait-v5.webp` and its small variant.
-- Social sharing preview: `assets/og-v9.png`.
+- Social sharing preview: `assets/og-v10.png`.
 - New release: update the "Latest release" section, the app card versions and add a card to "Updates from LinkedIn".
 
 The contact form prepares an email draft in the visitor's email application.
