@@ -187,7 +187,7 @@
       <p class="app-meta"><span class="chip">v1</span><span>Security · Contacts, HR, Banking, CRM</span></p>
       <h3>Data Vault Encryption</h3>
       <p class="app-tag">Plain in Odoo. Sealed in the database.</p>
-      <p>Field-level encryption at rest for Odoo: chosen fields and attachments are encrypted with AES-256 before they reach PostgreSQL, so dumps, backups and replicas only hold ciphertext.</p>
+      <p>Field-level encryption at rest for Odoo: chosen fields and attachments are encrypted with AES-256-GCM, the same cipher governments use for TOP SECRET data, before they reach PostgreSQL, so dumps, backups and replicas only hold ciphertext. The master key stays in the server&rsquo;s odoo.conf, so it protects dumps, backups and direct database access, not someone who can read the server&rsquo;s files.</p>
       <ul class="checks">
         <li>Presets for contact PII, HR personal data, IBANs and CRM leads; blind index search, raw SQL guard, audit log</li>
         <li>Key rotation while Odoo runs, a key per department, read and export audit and a GDPR compliance PDF</li>
